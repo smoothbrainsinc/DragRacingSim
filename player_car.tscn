@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj8rbu4dx0w3g"]
+
+[ext_resource type="PackedScene" uid="uid://gkohco0qf3vx" path="res://datsun.glb" id="1_dnlqt"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kb8hb"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_in3s4"]
+
+[node name="PlayerCar" type="VehicleBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.401195)
+shape = SubResource("ConvexPolygonShape3D_kb8hb")
+
+[node name="datsun" parent="." instance=ExtResource("1_dnlqt")]
+transform = Transform3D(0.999543, -0.0302419, 1.52266e-10, 0.0302074, 0.998401, 0.0477863, -0.00144515, -0.0477645, 0.998857, 0.108474, -0.0520514, -0.245815)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="datsun"]
+shape = SubResource("ConvexPolygonShape3D_in3s4")
+
+[node name="wheel-left-front2" type="VehicleWheel3D" parent="datsun"]
+transform = Transform3D(0.00363269, 0.0778631, -0.996957, -0.0177091, 0.996813, 0.0777873, 0.999837, 0.0173727, 0.00500001, -1.13572, 0.304873, 0.458656)
+
+[node name="wheel-right-front2" type="VehicleWheel3D" parent="datsun"]
+transform = Transform3D(-0.039444, 0.0791246, -0.996084, -0.01637, 0.996675, 0.0798198, 0.999088, 0.0194543, -0.0380176, -1.11955, 0.316254, -0.427429)
+
+[node name="wheel-left-rear2" type="VehicleWheel3D" parent="datsun"]
+transform = Transform3D(-0.00761434, 0.078201, -0.996909, -0.0173681, 0.996777, 0.0783234, 0.99982, 0.0179108, -0.00623159, 0.797137, 0.247433, 0.414974)
+
+[node name="wheel-right-rear2" type="VehicleWheel3D" parent="datsun"]
+transform = Transform3D(-0.101112, 0.0355893, -0.994238, -0.126892, 0.990736, 0.0483688, 0.98675, 0.131052, -0.095659, 0.80867, 0.268491, -0.436815)

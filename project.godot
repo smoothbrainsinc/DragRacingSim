@@ -1,0 +1,22 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="DragRacingSim"
+run/main_scene="uid://73cn3yj4qb08"
+config/features=PackedStringArray("4.4", "Forward Plus")
+
+[input]
+
+Accelerate={
+"deadzone": 0.2,
+"events": []
+}

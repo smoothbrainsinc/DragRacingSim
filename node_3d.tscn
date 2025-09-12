@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctf16ssus2ve0"]
+
+[ext_resource type="PackedScene" uid="uid://gkohco0qf3vx" path="res://datsun.glb" id="1_a202f"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a202f"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_noarx"]
+
+[node name="Node3D" type="VehicleBody3D"]
+
+[node name="datsun" parent="." instance=ExtResource("1_a202f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02005, 0.291751, 1.31429)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="datsun"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0177093, 0)
+shape = SubResource("ConvexPolygonShape3D_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_noarx")
