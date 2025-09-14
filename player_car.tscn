@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://i2cf8b37hi6y"]
+[gd_scene load_steps=5 format=3 uid="uid://i2cf8b37hi6y"]
 
 [ext_resource type="PackedScene" uid="uid://gkohco0qf3vx" path="res://datsun.glb" id="1_dnlqt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb8hb"]
+size = Vector3(3.5, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dnlqt"]
+size = Vector3(3.312, 1.18, 1.305)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dnlqt"]
 
 [node name="PlayerCar" type="VehicleBody3D"]
 axis_lock_linear_x = true
@@ -13,24 +17,46 @@ axis_lock_angular_x = true
 axis_lock_angular_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103128, 0.570068, 0.012017)
 shape = SubResource("BoxShape3D_kb8hb")
 
 [node name="datsun" parent="." instance=ExtResource("1_dnlqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="datsun"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000976562, 0.58, 0)
 shape = SubResource("BoxShape3D_dnlqt")
 
 [node name="wheel-left-front2" type="VehicleWheel3D" parent="datsun"]
+transform = Transform3D(0.0475075, 0, -0.998871, 0, 1, 0, 0.998871, 0, 0.0475074, -1.11992, 0.301951, 0.50337)
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="datsun/wheel-left-front2"]
+transform = Transform3D(-0.0289299, 0.0854156, -0.00120002, -2.65426e-11, 0.000276393, 0.372466, 0.438222, 0.00563886, -7.92211e-05, -0.0627764, 0.00343868, -0.0341783)
+mesh = SubResource("CylinderMesh_dnlqt")
 
 [node name="wheel-right-front2" type="VehicleWheel3D" parent="datsun"]
+transform = Transform3D(-0.0143811, 0, -0.999897, 0, 1, 0, 0.999897, 0, -0.0143811, -1.10262, 0.343227, -0.33558)
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="datsun/wheel-right-front2"]
+transform = Transform3D(-0.00292987, 0.0599505, -0.0225881, -0.000339562, 0.00288778, 0.468908, 0.525956, 0.000335821, 0.000176905, -0.0687539, -0.103032, 0.0774326)
+mesh = SubResource("CylinderMesh_dnlqt")
 
 [node name="wheel-left-rear2" type="VehicleWheel3D" parent="datsun"]
+transform = Transform3D(0.0229317, 0, -0.999737, 0, 1, 0, 0.999737, 0, 0.0229317, 0.758958, 0.261147, 0.310112)
+use_as_traction = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="datsun/wheel-left-rear2"]
+transform = Transform3D(-0.0276483, -0.232894, 0.00146132, 6.32515e-18, 0.000753048, 0.453232, -0.517537, 0.0124419, -7.80681e-05, -0.582295, -0.0887779, -0.0163397)
+mesh = SubResource("CylinderMesh_dnlqt")
 
 [node name="wheel-right-rear2" type="VehicleWheel3D" parent="datsun"]
+transform = Transform3D(0.0509415, 0, -0.998702, 0, 1, 0, 0.998702, 0, 0.0509415, 0.734047, 0.220154, -0.233104)
+use_as_traction = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="datsun"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.518275, 0, 0, 0, 0.000753048, 0.453232, 0, -0.233226, 0.00146341, 0.790061, 0.285564, 0.342677)
+mesh = SubResource("CylinderMesh_dnlqt")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
