@@ -11,6 +11,7 @@ size = Vector3(3.312, 1.18, 1.305)
 [sub_resource type="CylinderMesh" id="CylinderMesh_dnlqt"]
 
 [node name="PlayerCar" type="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271112, 0)
 axis_lock_linear_x = true
 axis_lock_linear_z = true
 axis_lock_angular_x = true

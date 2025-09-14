@@ -1,0 +1,98 @@
+[gd_scene load_steps=16 format=3 uid="uid://b5v2fpf8igwjm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ysjd"]
+size = Vector3(30, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7m1uf"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qvq5h"]
+size = Vector3(30, 1, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rn7r4"]
+size = Vector3(25, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2k2l"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0qb0"]
+size = Vector3(25, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pcu5r"]
+size = Vector3(20, 1, 402)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oc3nu"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6gfud"]
+size = Vector3(20, 1, 402)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nmboa"]
+size = Vector3(25, 1, 350)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7vv6"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v0td3"]
+size = Vector3(25, 1, 350)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hwd6p"]
+size = Vector3(30, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxxjn"]
+albedo_color = Color(0.78665, 0.682642, 0.0150283, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ewdda"]
+size = Vector3(30, 1, 1)
+
+[node name="DragStrip" type="Node3D"]
+
+[node name="StagingArea" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StagingArea"]
+mesh = SubResource("BoxMesh_4ysjd")
+surface_material_override/0 = SubResource("StandardMaterial3D_7m1uf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StagingArea"]
+shape = SubResource("BoxShape3D_qvq5h")
+
+[node name="PreStageArea" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PreStageArea"]
+mesh = SubResource("BoxMesh_rn7r4")
+surface_material_override/0 = SubResource("StandardMaterial3D_n2k2l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PreStageArea"]
+shape = SubResource("BoxShape3D_i0qb0")
+
+[node name="RacingTrack" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 201)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RacingTrack"]
+mesh = SubResource("BoxMesh_pcu5r")
+surface_material_override/0 = SubResource("StandardMaterial3D_oc3nu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RacingTrack"]
+shape = SubResource("BoxShape3D_6gfud")
+
+[node name="ShutdownArea" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 577)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ShutdownArea"]
+mesh = SubResource("BoxMesh_nmboa")
+surface_material_override/0 = SubResource("StandardMaterial3D_u7vv6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShutdownArea"]
+shape = SubResource("BoxShape3D_v0td3")
+
+[node name="SandPit" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 802)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SandPit"]
+mesh = SubResource("BoxMesh_hwd6p")
+surface_material_override/0 = SubResource("StandardMaterial3D_hxxjn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SandPit"]
+shape = SubResource("BoxShape3D_ewdda")
