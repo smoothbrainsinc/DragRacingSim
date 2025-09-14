@@ -5,10 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_get3s"]
 size = Vector3(1, 0.5, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q752e"]
-albedo_color = Color(0, 0, 1, 1)
-emission_enabled = true
-emission = Color(0, 0, 1, 1)
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_xhfnw"]
 
 [node name="PlayerCube" type="Node3D"]
 
@@ -27,4 +24,4 @@ shape = SubResource("BoxShape3D_get3s")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Player/VehicleBody3D"]
 size = Vector3(1, 0.5, 2)
-material = SubResource("StandardMaterial3D_q752e")
+material = SubResource("ORMMaterial3D_xhfnw")

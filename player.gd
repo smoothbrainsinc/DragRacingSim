@@ -18,6 +18,8 @@ func _ready():
 	if finish:
 		finish.player_finished.connect(_on_player_finished)
 
+	print("GameManager available: ", GameManager)
+
 func _on_race_started():
 	print("Player can move!")
 	can_move = true

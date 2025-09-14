@@ -1,16 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://73cn3yj4qb08"]
+[gd_scene load_steps=7 format=3 uid="uid://73cn3yj4qb08"]
 
 [ext_resource type="PackedScene" uid="uid://cjb6jonp3s1rb" path="res://track.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://271vu8ob0n2o" path="res://opponent.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bj8rbu4dx0w3g" path="res://player_car.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://i2cf8b37hi6y" path="res://player_car.tscn" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://c8rds87bhp76p" path="res://camera_manager.gd" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://pnjqqnux55u8" path="res://race_ui.tscn" id="5_lquwl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1bvp3"]
+size = Vector3(10, 0.5, 1)
 
 [node name="main" type="Node3D"]
 
 [node name="Track" parent="." instance=ExtResource("1_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23386, -0.040435, -0.408501)
 
 [node name="OpponentVehicle" parent="." instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64324, 0, -21.0414)
+transform = Transform3D(0.998545, 0.053922, 0, -0.053922, 0.998545, 0, 0, 0, 1, -2.71211, 0.360409, -18.2801)
 
 [node name="StartCamera" type="Camera3D" parent="."]
 transform = Transform3D(-1, 2.99003e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 5, -26)
@@ -29,4 +34,12 @@ finish_camera_player = NodePath("../FinishCameraPlayer")
 finish_camera_opponent = NodePath("../FinishCameraOpponent")
 
 [node name="PlayerCar" parent="." instance=ExtResource("4_7mycd")]
-transform = Transform3D(0.0100704, -2.18259e-11, 0.999949, 0.0216218, 0.999766, -0.000217751, -0.999716, 0.021623, 0.010068, 2.1122, -2.98023e-08, -21.4837)
+transform = Transform3D(0.0100704, -3.63744e-11, 0.999949, 0.0216218, 0.999766, -0.000217751, -0.999716, 0.021623, 0.010068, 2.1122, 0.636132, -18.4063)
+
+[node name="StartLine" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StartLine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.27)
+shape = SubResource("BoxShape3D_1bvp3")
+
+[node name="RaceUI" parent="." instance=ExtResource("5_lquwl")]

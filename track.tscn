@@ -1,19 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjb6jonp3s1rb"]
+[gd_scene load_steps=6 format=3 uid="uid://cjb6jonp3s1rb"]
 
 [ext_resource type="Script" uid="uid://bhm2tn5xil8pt" path="res://track.gd" id="1_mll3j"]
-[ext_resource type="Script" uid="uid://cwxb7ltigb1kk" path="res://finish_detection.gd" id="2_phvr8"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dlrp4"]
-size = Vector3(10, 0.05, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mll3j"]
-albedo_color = Color(0.479479, 0.212237, 0.82135, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_phvr8"]
-size = Vector3(10, 1, 0.25)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phvr8"]
-albedo_color = Color(0.479183, 0.479183, 0.479183, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bcvet"]
 size = Vector3(10, 0.05, 40)
@@ -21,57 +8,14 @@ size = Vector3(10, 0.05, 40)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nfsw"]
 albedo_color = Color(0.902939, 0.908358, 0.098456, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vr403"]
-size = Vector3(10, 1, 0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_mll3j"]
+size = Vector3(10, 0.25, 40)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucvjy"]
-albedo_color = Color(0.715443, 0.246971, 0.529768, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_8nfsw"]
-size = Vector3(10, 1, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_82y7p"]
-size = Vector3(10, 0.05, 40)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hrad"]
-albedo_color = Color(0.218244, 0.677044, 0.818448, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_t1oi4"]
-size = Vector3(10, 0.05, 20)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1aip"]
-albedo_color = Color(0.679781, 0.381372, 0.162273, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_phvr8"]
+size = Vector3(10, 0.25, 40)
 
 [node name="TrackSection" type="Node3D"]
 script = ExtResource("1_mll3j")
-
-[node name="PitArea" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -44.4488)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="PitArea"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PitArea/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14.7856)
-shape = SubResource("BoxShape3D_dlrp4")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="PitArea/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.2976)
-size = Vector3(10, 0.05, 10)
-material = SubResource("StandardMaterial3D_mll3j")
-
-[node name="StartingLine" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.4758)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="StartingLine"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StartingLine/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.98242)
-shape = SubResource("BoxShape3D_phvr8")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StartingLine/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.42)
-size = Vector3(10, 0.05, 5)
-material = SubResource("StandardMaterial3D_phvr8")
 
 [node name="QuarterMileStrip" type="Node3D" parent="."]
 
@@ -86,52 +30,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.220592)
 size = Vector3(10, 0.05, 40)
 material = SubResource("StandardMaterial3D_8nfsw")
 
-[node name="FinishLine" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22.3955)
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="FinishLine"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39.5742)
+shape = SubResource("BoxShape3D_mll3j")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLine/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.15675)
-shape = SubResource("BoxShape3D_vr403")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40.2177)
+mesh = SubResource("BoxMesh_phvr8")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="FinishLine/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.10678)
-size = Vector3(10, 0.05, 0.5)
-material = SubResource("StandardMaterial3D_ucvjy")
-
-[node name="FinishDetection" type="Area3D" parent="FinishLine"]
-script = ExtResource("2_phvr8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLine/FinishDetection"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97671)
-shape = SubResource("BoxShape3D_8nfsw")
-
-[node name="RundownArea" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.333055)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="RundownArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40.4912)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RundownArea/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0169106)
-shape = SubResource("BoxShape3D_82y7p")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="RundownArea/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.04104)
-size = Vector3(10, 0.05, 40)
-material = SubResource("StandardMaterial3D_3hrad")
-
-[node name="SandTrap" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 63.9515)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SandTrap"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SandTrap/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.99637)
-shape = SubResource("BoxShape3D_t1oi4")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="SandTrap/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.8576)
-size = Vector3(10, 0.05, 20)
-material = SubResource("StandardMaterial3D_l1aip")
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D/MeshInstance3D"]
+size = Vector3(10, 0.25, 40)

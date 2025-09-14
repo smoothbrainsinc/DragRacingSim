@@ -14,6 +14,10 @@ config/name="DragRacingSim"
 run/main_scene="uid://73cn3yj4qb08"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+GameManager="*res://GameManager.gd"
+
 [input]
 
 Accelerate={

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://pnjqqnux55u8"]
+
+[ext_resource type="Script" uid="uid://dm62yu72s7ove" path="res://race_ui.gd" id="1_32t67"]
+
+[node name="RaceUI" type="CanvasLayer"]
+script = ExtResource("1_32t67")
+
+[node name="CountdownLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RaceTimeLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ResultsPanel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WinnerLabel" type="Label" parent="ResultsPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RestartButton" type="Button" parent="ResultsPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
