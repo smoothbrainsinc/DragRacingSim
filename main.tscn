@@ -41,7 +41,7 @@ transform = Transform3D(0.0100704, -3.63744e-11, 0.999949, 0.0216218, 0.999766, 
 [node name="DragStrip" parent="." instance=ExtResource("5_7mycd")]
 
 [node name="StartLine" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0466847, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StartLine"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)
