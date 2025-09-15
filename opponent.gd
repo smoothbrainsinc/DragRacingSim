@@ -1,15 +1,17 @@
-
 extends VehicleBody3D
 
 @export var max_engine_force = 180.0
 var can_move = false
 
 func _ready():
-	var ui = get_node("/RaceUI")
-	if ui:
-		ui.race_started.connect(_on_race_started)
-	
-	var finish = get_node("../Track/FinishLine/DetectionArea")
+	# Connect to GameManager signal directly
+	if GameManager and GameManager.has_signal("race_started"):
+		GameManager.race_started.connect(_on_race_started)
+	else:
+		print("Warning: GameManager or race_started signal not found")
+
+	# Connect to finish line
+	var finish = get_node_or_null("/root/main/FinishLine")
 	if finish:
 		finish.opponent_finished.connect(_on_opponent_finished)
 
