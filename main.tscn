@@ -1,16 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://73cn3yj4qb08"]
+[gd_scene load_steps=11 format=3 uid="uid://73cn3yj4qb08"]
 
 [ext_resource type="Script" uid="uid://dleuehlx62si3" path="res://opponent.gd" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://271vu8ob0n2o" path="res://opponent.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://cqekl1kgtmb1f" path="res://player_car.tscn" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://bn4lcf212ub2r" path="res://player.gd" id="4_272bh"]
 [ext_resource type="Script" uid="uid://c8rds87bhp76p" path="res://camera_manager.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b5v2fpf8igwjm" path="res://drag_strip.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://pnjqqnux55u8" path="res://race_ui.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://cwxb7ltigb1kk" path="res://finish_detection.gd" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://pv7st2bs3hoc" path="res://TopFuelD.tscn" id="9_kek77"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
 size = Vector3(15, 1, 1)
@@ -40,13 +37,6 @@ start_camera = NodePath("../StartCamera")
 finish_camera_player = NodePath("../FinishCameraPlayer")
 finish_camera_opponent = NodePath("../FinishCameraOpponent")
 
-[node name="PlayerCar" parent="." instance=ExtResource("4_7mycd")]
-transform = Transform3D(0.0100704, -3.63744e-11, 0.999949, 0.0216218, 0.999766, -0.000217751, -0.999716, 0.021623, 0.010068, 2.12447, 0.578188, -2.84606)
-script = ExtResource("4_272bh")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCar"]
-shape = SubResource("BoxShape3D_kek77")
-
 [node name="RaceUI" parent="." instance=ExtResource("5_lquwl")]
 
 [node name="DragStrip" parent="." instance=ExtResource("5_7mycd")]
@@ -70,5 +60,6 @@ transform = Transform3D(-0.57918, 0.815193, -0.00319737, 0.76759, 0.546672, 0.33
 light_energy = 3.0
 shadow_enabled = true
 
-[node name="Node3D" parent="." instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.45096, 0.255568, -6.58124)
+[node name="TopFuelD" parent="." instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09887, 0.390619, -2.94986)
+script = ExtResource("4_272bh")

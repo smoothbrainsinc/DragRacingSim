@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvq5t08xlmeib"]
+[gd_scene load_steps=5 format=3 uid="uid://cvq5t08xlmeib"]
 
+[ext_resource type="Script" uid="uid://7rija185oy8u" path="res://dragster_vehicle.gd" id="1_b2vlj"]
 [ext_resource type="PackedScene" uid="uid://pv7st2bs3hoc" path="res://TopFuelD.tscn" id="1_dhimj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dhimj"]
@@ -9,6 +10,7 @@ size = Vector3(6.065, 4.44, 16.49)
 size = Vector3(6.065, 7.995, 16.49)
 
 [node name="VehicleBody3D" type="VehicleBody3D"]
+script = ExtResource("1_b2vlj")
 
 [node name="TopFuelD" parent="." instance=ExtResource("1_dhimj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.747878, 0, 1.53654)
@@ -34,5 +36,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76342, 1.69157, -12.0065)
 use_as_traction = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.48303)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02701, -0.46221, -4.85189)
 shape = SubResource("BoxShape3D_b2vlj")
