@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvq5t08xlmeib"]
+
+[ext_resource type="PackedScene" uid="uid://pv7st2bs3hoc" path="res://TopFuelD.tscn" id="1_dhimj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dhimj"]
+size = Vector3(6.065, 4.44, 16.49)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b2vlj"]
+size = Vector3(6.065, 7.995, 16.49)
+
+[node name="VehicleBody3D" type="VehicleBody3D"]
+
+[node name="TopFuelD" parent="." instance=ExtResource("1_dhimj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.747878, 0, 1.53654)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="TopFuelD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712585, 0, -5.99285)
+shape = SubResource("BoxShape3D_dhimj")
+
+[node name="VehicleWheel_FrontLeft" type="VehicleWheel3D" parent="TopFuelD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0323575, 0.522472, 0.898589)
+use_as_steering = true
+
+[node name="VehicleWheel_FrontRight" type="VehicleWheel3D" parent="TopFuelD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56544, 0.51865, 0.987956)
+use_as_steering = true
+
+[node name="VehicleWheel3D_RearLeft" type="VehicleWheel3D" parent="TopFuelD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20518, 1.63647, -12.4088)
+use_as_traction = true
+
+[node name="VehicleWheel3d_RearRight" type="VehicleWheel3D" parent="TopFuelD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76342, 1.69157, -12.0065)
+use_as_traction = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.48303)
+shape = SubResource("BoxShape3D_b2vlj")
