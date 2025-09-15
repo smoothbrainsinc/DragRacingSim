@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cwi6ntov78ywh"]
+
+[node name="PlayerCarFancy" type="VehicleBody3D"]
