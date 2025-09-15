@@ -14,9 +14,10 @@ emission = Color(1, 0.890196, 0, 1)
 size = Vector3(1, 0.5, 2)
 
 [node name="OpponentVehicle" type="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526249, 0)
 
 [node name="Opponent" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0809318, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0721589, 0)
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="Opponent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0101166, -0.0101156)

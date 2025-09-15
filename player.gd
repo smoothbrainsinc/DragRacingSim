@@ -22,7 +22,8 @@ func _ready():
 
 func _on_race_started():
 	can_move = true
-	print("Player can move!")
+	print("PLAYER: Race started signal received. can_move = ", can_move)
+	print("PLAYER: Input actions: ", InputMap.has_action("accelerate"), InputMap.has_action("brake"))
 
 func _on_player_finished():
 	can_move = false
@@ -35,7 +36,7 @@ func _physics_process(_delta):
 		if linear_velocity.length() < 0.1:
 			linear_velocity = Vector3.ZERO
 			angular_velocity = Vector3.ZERO
-		return
+			return
 
 	# Handle acceleration and braking
 	if Input.is_action_pressed("accelerate"):
@@ -46,14 +47,14 @@ func _physics_process(_delta):
 		engine_force = 0
 		brake = 0
 
-	# Handle steering
-	steering = 0
+		# Handle steering
+		steering = 0
 	if Input.is_action_pressed("ui_left"):
 		steering = max_steering
 	elif Input.is_action_pressed("ui_right"):
 		steering = -max_steering
 
-	# Stabilization
+	# Stabilization - FIXED VERSION:
 	if linear_velocity.length() < 0.1:
-# Apply an upward stabilizing force to prevent sinking/flipping
-		apply_central_force(Vector3.UP * (-ProjectSettings.get_setting("physics/3d/default_gravity") * mass * 0.05))
+		var stabilizer_force = -ProjectSettings.get_setting("physics/3d/default_gravity") * mass * 0.05
+		apply_central_force(Vector3(0, stabilizer_force, 0))

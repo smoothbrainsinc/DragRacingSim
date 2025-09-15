@@ -16,25 +16,25 @@ script = ExtResource("1_b2vlj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.747878, 0, 1.53654)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="TopFuelD"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712585, 0, -5.99285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.828315, 4.17479, -6.67353)
 shape = SubResource("BoxShape3D_dhimj")
 
 [node name="VehicleWheel_FrontLeft" type="VehicleWheel3D" parent="TopFuelD"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0323575, 0.522472, 0.898589)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0323575, 3.39189, 0.898589)
 use_as_steering = true
 
 [node name="VehicleWheel_FrontRight" type="VehicleWheel3D" parent="TopFuelD"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56544, 0.51865, 0.987956)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56544, 3.24599, 0.987956)
 use_as_steering = true
 
 [node name="VehicleWheel3D_RearLeft" type="VehicleWheel3D" parent="TopFuelD"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20518, 1.63647, -12.4088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20518, 4.28771, -12.4088)
 use_as_traction = true
 
 [node name="VehicleWheel3d_RearRight" type="VehicleWheel3D" parent="TopFuelD"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76342, 1.69157, -12.0065)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76342, 6.20705, -12.0065)
 use_as_traction = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02701, -0.46221, -4.85189)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.66742, -5.07302)
 shape = SubResource("BoxShape3D_b2vlj")

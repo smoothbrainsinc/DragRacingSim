@@ -16,15 +16,18 @@ func _ready():
 		finish.opponent_finished.connect(_on_opponent_finished)
 
 func _on_race_started():
-	print("Opponent can move!")
 	can_move = true
+	print("OPPONENT: Race started signal received. can_move = ", can_move)
 
 func _physics_process(_delta):
+
 	if can_move:
 		engine_force = max_engine_force  # Simple AI - just go forward
-		# Future: Add steering AI, variability, failures
-
+		print("OPPONENT: Applying force: ", engine_force)  # Debug print
+	else:
+		engine_force = 0
+		brake = 100.0  # Brake when not allowed to move
+	
 func _on_opponent_finished():
 	print("Opponent finished!")
-	engine_force = 0
-	brake = 100.0
+	

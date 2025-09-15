@@ -8,7 +8,7 @@ size = Vector3(1.8, 3.715, 15.8122)
 [node name="Node3D" type="VehicleBody3D"]
 
 [node name="dragster3" parent="." instance=ExtResource("1_wkxpy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76188, 0, -9.88716)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76188, 2.70493, -9.88716)
 
 [node name="left_front_wheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0323575, 0.522472, 0.898589)
