@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bsr6lbecjg8u2"]
+
+[node name="VehicleBody3D" type="VehicleBody3D"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://pv7st2bs3hoc"]
+
+[ext_resource type="PackedScene" uid="uid://biodyipp0dnnu" path="res://dragster3.glb" id="1_wkxpy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wkxpy"]
+size = Vector3(1.8, 3.715, 15.8122)
+
+[node name="Node3D" type="VehicleBody3D"]
+
+[node name="dragster3" parent="." instance=ExtResource("1_wkxpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76188, 0, -9.88716)
+
+[node name="left_front_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0323575, 0.522472, 0.898589)
+use_as_steering = true
+
+[node name="right_front_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56544, 0.51865, 0.987956)
+use_as_steering = true
+
+[node name="left_rear_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21305, 1.63647, -12.4824)
+use_as_traction = true
+
+[node name="right_reart_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76342, 1.69157, -12.0065)
+use_as_traction = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.934977, 1.59496, -6.2819)
+shape = SubResource("BoxShape3D_wkxpy")

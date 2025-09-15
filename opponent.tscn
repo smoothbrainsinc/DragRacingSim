@@ -16,8 +16,10 @@ size = Vector3(1, 0.5, 2)
 [node name="OpponentVehicle" type="VehicleBody3D"]
 
 [node name="Opponent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0809318, 0)
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="Opponent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0101166, -0.0101156)
 collision_mask = 3
 script = ExtResource("1_amo4f")
 
@@ -25,6 +27,7 @@ script = ExtResource("1_amo4f")
 shape = SubResource("BoxShape3D_lltpv")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Opponent/VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0101166, 0)
 size = Vector3(1, 0.5, 2)
 material = SubResource("StandardMaterial3D_cafab")
 
