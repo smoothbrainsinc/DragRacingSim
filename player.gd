@@ -9,7 +9,7 @@ var can_move = false
 
 func _ready():
 	# Connect to UI signals
-	var ui = get_node("../UICanvas")  # Adjust path as needed
+	var ui = get_node("../RaceUI")  # Adjust path as needed
 	if ui:
 		ui.race_started.connect(_on_race_started)
 	

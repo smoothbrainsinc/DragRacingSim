@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://271vu8ob0n2o"]
+[gd_scene load_steps=5 format=3 uid="uid://271vu8ob0n2o"]
 
 [ext_resource type="Script" uid="uid://dleuehlx62si3" path="res://opponent.gd" id="1_amo4f"]
 
@@ -10,7 +10,10 @@ albedo_color = Color(1, 0.890196, 0, 1)
 emission_enabled = true
 emission = Color(1, 0.890196, 0, 1)
 
-[node name="OpponentVehicle" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_amo4f"]
+size = Vector3(1, 0.5, 2)
+
+[node name="OpponentVehicle" type="VehicleBody3D"]
 
 [node name="Opponent" type="Node3D" parent="."]
 
@@ -24,3 +27,6 @@ shape = SubResource("BoxShape3D_lltpv")
 [node name="CSGBox3D" type="CSGBox3D" parent="Opponent/VehicleBody3D"]
 size = Vector3(1, 0.5, 2)
 material = SubResource("StandardMaterial3D_cafab")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_amo4f")

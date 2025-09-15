@@ -5,7 +5,7 @@ extends VehicleBody3D
 var can_move = false
 
 func _ready():
-	var ui = get_node("../UICanvas")
+	var ui = get_node("/RaceUI")
 	if ui:
 		ui.race_started.connect(_on_race_started)
 	
