@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://73cn3yj4qb08"]
+[gd_scene load_steps=12 format=3 uid="uid://73cn3yj4qb08"]
 
+[ext_resource type="Script" uid="uid://c8yjmecdwt5qq" path="res://main.gd" id="1_kek77"]
 [ext_resource type="Script" uid="uid://dleuehlx62si3" path="res://opponent.gd" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://271vu8ob0n2o" path="res://opponent.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bn4lcf212ub2r" path="res://player.gd" id="4_272bh"]
@@ -16,6 +17,7 @@ size = Vector3(15, 1, 1)
 size = Vector3(25, 1, 1)
 
 [node name="main" type="Node3D"]
+script = ExtResource("1_kek77")
 
 [node name="OpponentVehicle" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(0.998545, 0.053922, 0, -0.053922, 0.998545, 0, 0, 0, 1, -2.71211, 0.950612, -1.73804)

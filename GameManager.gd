@@ -136,7 +136,7 @@ func _setup_go_state() -> void:
 	ui_update_countdown.emit("GO!")
 
 func _setup_racing_state() -> void:
-	race_start_time = Time.get_time_dict_from_system()["unix"]
+	race_start_time = Time.get_unix_time_from_system()
 	ui_update_countdown.emit("")
 	race_started.emit()
 	print("Race started at: ", race_start_time)
@@ -172,7 +172,7 @@ func can_player_input() -> bool:
 
 func get_race_time() -> float:
 	if current_state == RaceState.RACING:
-		return Time.get_time_dict_from_system()["unix"] - race_start_time
+		return Time.get_unix_time_from_system() - race_start_time
 	elif current_state == RaceState.FINISHED:
 		return race_end_time - race_start_time
 	else:

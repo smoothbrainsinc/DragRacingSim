@@ -55,4 +55,5 @@ func _physics_process(_delta):
 
 	# Stabilization
 	if linear_velocity.length() < 0.1:
-		apply_central_force(-ProjectSettings.get_setting("physics/3d/default_gravity") * mass * 0.05)
+# Apply an upward stabilizing force to prevent sinking/flipping
+		apply_central_force(Vector3.UP * (-ProjectSettings.get_setting("physics/3d/default_gravity") * mass * 0.05))
