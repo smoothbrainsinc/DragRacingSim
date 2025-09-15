@@ -102,7 +102,7 @@ func car_finished(car_name: String, finish_time: float) -> void:
 	
 	# Check if this is the first car to finish
 	if winner == "":
-		winner = car_name
+		winner = "Player"
 		race_end_time = Time.get_time_dict_from_system()["unix"]
 		change_state(RaceState.FINISHED)
 

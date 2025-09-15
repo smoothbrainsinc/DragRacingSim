@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://pnjqqnux55u8"]
+[gd_scene load_steps=3 format=3 uid="uid://pnjqqnux55u8"]
 
 [ext_resource type="Script" uid="uid://dm62yu72s7ove" path="res://race_ui.gd" id="1_32t67"]
+[ext_resource type="Script" uid="uid://bf3p2bh5dpmu8" path="res://GameManager.gd" id="2_b2hft"]
 
 [node name="RaceUI" type="CanvasLayer"]
 script = ExtResource("1_32t67")
@@ -21,6 +22,7 @@ theme_override_font_sizes/font_size = 64
 text = "Countdown"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_b2hft")
 
 [node name="RaceTimeLabel" type="Label" parent="."]
 anchors_preset = 1
@@ -32,6 +34,7 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 24
 text = "RaceTime"
 horizontal_alignment = 2
+script = ExtResource("2_b2hft")
 
 [node name="ResultsPanel" type="Panel" parent="."]
 anchors_preset = 15
@@ -43,6 +46,7 @@ offset_right = -352.0
 offset_bottom = -148.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_b2hft")
 
 [node name="WinnerLabel" type="Label" parent="ResultsPanel"]
 layout_mode = 1
@@ -60,6 +64,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_b2hft")
 
 [node name="RestartButton" type="Button" parent="ResultsPanel"]
 layout_mode = 0
@@ -68,3 +73,4 @@ offset_top = 200.0
 offset_right = 275.0
 offset_bottom = 231.0
 text = "RESTART"
+script = ExtResource("2_b2hft")

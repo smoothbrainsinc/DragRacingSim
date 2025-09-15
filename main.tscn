@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://73cn3yj4qb08"]
+[gd_scene load_steps=13 format=3 uid="uid://73cn3yj4qb08"]
 
 [ext_resource type="Script" uid="uid://dleuehlx62si3" path="res://opponent.gd" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://271vu8ob0n2o" path="res://opponent.tscn" id="4_1bvp3"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://pnjqqnux55u8" path="res://race_ui.tscn" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://cwxb7ltigb1kk" path="res://finish_detection.gd" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://pv7st2bs3hoc" path="res://TopFuelD.tscn" id="9_kek77"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_272bh"]
 size = Vector3(15, 1, 1)
@@ -41,6 +43,9 @@ finish_camera_opponent = NodePath("../FinishCameraOpponent")
 [node name="PlayerCar" parent="." instance=ExtResource("4_7mycd")]
 transform = Transform3D(0.0100704, -3.63744e-11, 0.999949, 0.0216218, 0.999766, -0.000217751, -0.999716, 0.021623, 0.010068, 2.12447, 0.578188, -2.84606)
 script = ExtResource("4_272bh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCar"]
+shape = SubResource("BoxShape3D_kek77")
 
 [node name="RaceUI" parent="." instance=ExtResource("5_lquwl")]
 
