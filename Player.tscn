@@ -6,6 +6,9 @@
 size = Vector3(5.555, 3.41, 17.445)
 
 [node name="Node3D" type="VehicleBody3D"]
+mass = 1000.0
+linear_damp = 0.5
+angular_damp = 0.5
 
 [node name="dragster3" parent="." instance=ExtResource("1_wkxpy")]
 

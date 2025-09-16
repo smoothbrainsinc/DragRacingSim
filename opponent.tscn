@@ -18,9 +18,12 @@ size = Vector3(1, 0.5, 2)
 [node name="Opponent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0721589, 0)
 
-[node name="VehicleBody3D" type="VehicleBody3D" parent="Opponent"]
+[node name="VehicleBody3D" type="RigidBody3D" parent="Opponent"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0101166, -0.0101156)
 collision_mask = 3
+mass = 1000.0
+linear_damp = 0.5
+angular_damp = 0.5
 script = ExtResource("1_amo4f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Opponent/VehicleBody3D"]
