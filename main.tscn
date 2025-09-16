@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://c8yjmecdwt5qq" path="res://main.gd" id="1_kek77"]
 [ext_resource type="Script" uid="uid://dleuehlx62si3" path="res://opponent.gd" id="2_5vw27"]
 [ext_resource type="PackedScene" uid="uid://271vu8ob0n2o" path="res://opponent.tscn" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://bn4lcf212ub2r" path="res://player.gd" id="4_272bh"]
 [ext_resource type="Script" uid="uid://c8rds87bhp76p" path="res://camera_manager.gd" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b5v2fpf8igwjm" path="res://drag_strip.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://pnjqqnux55u8" path="res://race_ui.tscn" id="5_lquwl"]
@@ -16,15 +15,17 @@ size = Vector3(15, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
 size = Vector3(25, 1, 1)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kek77"]
+
 [node name="main" type="Node3D"]
 script = ExtResource("1_kek77")
 
 [node name="OpponentVehicle" parent="." instance=ExtResource("4_1bvp3")]
-transform = Transform3D(0.998545, 0.053922, 0, -0.053922, 0.998545, 0, 0, 0, 1, -2.71211, 0.950612, -1.73804)
+transform = Transform3D(0.998545, 0.053922, 0, -0.053922, 0.998545, 0, 0, 0, 1, -2.71211, 1.44752, -6.57021)
 script = ExtResource("2_5vw27")
 
 [node name="StartCamera" type="Camera3D" parent="."]
-transform = Transform3D(-1, 2.99003e-08, -8.21506e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0.0674896, 4.79155, -7.98438)
+transform = Transform3D(-1, 1.27055e-21, -8.74228e-08, -4.78248e-08, 0.837099, 0.547052, 7.31815e-08, 0.547052, -0.837099, -0.152382, 7.92856, -17.8325)
 current = true
 
 [node name="FinishCameraPlayer" type="Camera3D" parent="."]
@@ -42,6 +43,7 @@ finish_camera_opponent = NodePath("../FinishCameraOpponent")
 [node name="RaceUI" parent="." instance=ExtResource("5_lquwl")]
 
 [node name="DragStrip" parent="." instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.398051, 0)
 
 [node name="StartLine" type="Area3D" parent="."]
 
@@ -59,9 +61,10 @@ shape = SubResource("BoxShape3D_lquwl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.57918, 0.815193, -0.00319737, 0.76759, 0.546672, 0.334598, 0.27451, 0.191338, -0.942356, 0, 13.2137, -55.4866)
-light_energy = 3.0
 shadow_enabled = true
 
 [node name="TopFuelD" parent="." instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11252, -0.22161, -2.95214)
-script = ExtResource("4_272bh")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54854, 1, -14.6437)
+physics_material_override = SubResource("PhysicsMaterial_kek77")
+can_sleep = false
+linear_damp = 64.72

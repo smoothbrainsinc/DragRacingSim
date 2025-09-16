@@ -7,7 +7,7 @@ class_name RaceUI
 @onready var results_panel: Panel = $ResultsPanel
 @onready var winner_label: Label = $ResultsPanel/WinnerLabel
 @onready var restart_button: Button = $ResultsPanel/RestartButton
-
+	 
 func _ready() -> void:
 	# Connect to GameManager signals
 	GameManager.ui_update_countdown.connect(_on_countdown_update)

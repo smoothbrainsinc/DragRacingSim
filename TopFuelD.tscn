@@ -1,31 +1,38 @@
 [gd_scene load_steps=3 format=3 uid="uid://pv7st2bs3hoc"]
 
-[ext_resource type="PackedScene" uid="uid://biodyipp0dnnu" path="res://dragster3.glb" id="1_wkxpy"]
+[ext_resource type="PackedScene" uid="uid://bkaj1wxgyk0na" path="res://dragster3.glb" id="1_wkxpy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wkxpy"]
-size = Vector3(1.8, 3.715, 15.8122)
+size = Vector3(5.555, 3.41, 17.445)
 
 [node name="Node3D" type="VehicleBody3D"]
 
 [node name="dragster3" parent="." instance=ExtResource("1_wkxpy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76188, 2.70493, -9.88716)
-
-[node name="left_front_wheel" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0323575, 0.522472, 0.898589)
-use_as_steering = true
-
-[node name="right_front_wheel" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56544, 0.51865, 0.987956)
-use_as_steering = true
-
-[node name="left_rear_wheel" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21305, 1.63647, -12.4824)
-use_as_traction = true
-
-[node name="right_reart_wheel" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76342, 1.69157, -12.0065)
-use_as_traction = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.934977, 1.59496, -6.2819)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71659, 3.43318)
 shape = SubResource("BoxShape3D_wkxpy")
+
+[node name="left_front_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0323575, 0.522472, 10.8437)
+use_as_steering = true
+wheel_radius = 0.85
+wheel_friction_slip = 1.0
+
+[node name="right_front_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56544, 0.51865, 10.7993)
+use_as_steering = true
+wheel_radius = 0.85
+wheel_friction_slip = 1.0
+
+[node name="left_rear_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21305, 1.64767, -2.68081)
+use_as_traction = true
+wheel_radius = 3.18
+wheel_friction_slip = 1.0
+
+[node name="right_reart_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76342, 1.69157, -2.55195)
+use_as_traction = true
+wheel_radius = 31.8
+wheel_friction_slip = 1.0
